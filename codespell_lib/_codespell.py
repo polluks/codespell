@@ -39,7 +39,6 @@ uri_regex_def = (
 # Pass all misspellings through this translation table to generate
 # alternative misspellings and fixes.
 alt_chars = (("'", "’"),)
-encodings = ("utf-8", "iso-8859-1")
 USAGE = """
 \t%prog [OPTIONS] [file1 file2 ... fileN]
 """
@@ -60,7 +59,7 @@ _builtin_dictionaries = (
     (
         "rare",
         "for rare (but valid) words that are likely to be errors",
-        "_rare",  # noqa: E501
+        "_rare",
         None,
         None,
         None,
@@ -105,7 +104,7 @@ _builtin_dictionaries = (
     (
         "en-GB_to_en-US",
         "for corrections from en-GB to en-US",
-        "_en-GB_to_en-US",  # noqa: E501
+        "_en-GB_to_en-US",
         True,
         True,
         ("en_GB",),
@@ -119,6 +118,7 @@ _builtin_default = "clear,rare"
 EX_OK = 0
 EX_USAGE = 64
 EX_DATAERR = 65
+EX_CONFIG = 78
 
 # OPTIONS:
 #
@@ -204,12 +204,13 @@ class FileOpener:
     def init_chardet(self) -> None:
         try:
             from chardet.universaldetector import UniversalDetector
-        except ImportError:
-            raise ImportError(
+        except ImportError as e:
+            msg = (
                 "There's no chardet installed to import from. "
                 "Please, install it and check your PYTHONPATH "
                 "environment variable"
             )
+            raise ImportError(msg) from e
 
         self.encdetector = UniversalDetector()
 
@@ -248,7 +249,7 @@ class FileOpener:
     def open_with_internal(self, filename: str) -> Tuple[List[str], str]:
         encoding = None
         first_try = True
-        for encoding in encodings:
+        for encoding in ("utf-8", "iso-8859-1"):
             if first_try:
                 first_try = False
             elif not self.quiet_level & QuietLevels.ENCODING:
@@ -266,7 +267,8 @@ class FileOpener:
                 else:
                     break
         else:
-            raise Exception("Unknown encoding")
+            msg = "Unknown encoding"
+            raise Exception(msg)
 
         return lines, encoding
 
@@ -477,7 +479,7 @@ def parse_options(
         "- 1: disable warnings about wrong encoding.\n"
         "- 2: disable warnings about binary files.\n"
         "- 4: omit warnings about automatic fixes that were disabled in the dictionary.\n"  # noqa: E501
-        "- 8: don't print anything for non-automatic fixes.\n"  # noqa: E501
+        "- 8: don't print anything for non-automatic fixes.\n"
         "- 16: don't print the list of fixed files.\n"
         "- 32: don't print configuration files.\n"
         "As usual with bitmasks, these levels can be "
@@ -510,7 +512,7 @@ def parse_options(
         "--check-hidden",
         action="store_true",
         default=False,
-        help="check hidden files and directories (those " 'starting with ".") as well.',
+        help='check hidden files and directories (those starting with ".") as well.',
     )
     parser.add_argument(
         "-A",
@@ -532,6 +534,11 @@ def parse_options(
         type=int,
         metavar="LINES",
         help="print LINES of surrounding context",
+    )
+    parser.add_argument(
+        "--stdin-single-line",
+        action="store_true",
+        help="output just a single line for each misspelling in stdin mode",
     )
     parser.add_argument("--config", type=str, help="path to config file.")
     parser.add_argument("--toml", type=str, help="path to a pyproject.toml file.")
@@ -562,10 +569,11 @@ def parse_options(
                 import tomli as tomllib  # type: ignore[no-redef]
             except ImportError as e:
                 if tomllib_raise_error:
-                    raise ImportError(
+                    msg = (
                         f"tomllib or tomli are required to read pyproject.toml "
                         f"but could not be imported, got: {e}"
-                    ) from None
+                    )
+                    raise ImportError(msg) from None
                 tomllib = None  # type: ignore[assignment]
         if tomllib is not None:
             for toml_file in toml_files:
@@ -584,7 +592,7 @@ def parse_options(
             used_cfg_files.append(cfg_file)
 
     # Use config files
-    config.read(cfg_files)
+    config.read(used_cfg_files)
     if config.has_section("codespell"):
         # Build a "fake" argv list using option name and value.
         cfg_args = []
@@ -609,24 +617,23 @@ def parse_options(
 
 
 def parse_ignore_words_option(ignore_words_option: List[str]) -> Set[str]:
-    ignore_words = set()
+    ignore_words: Set[str] = set()
     if ignore_words_option:
         for comma_separated_words in ignore_words_option:
-            for word in comma_separated_words.split(","):
-                ignore_words.add(word.strip())
+            ignore_words.update(
+                word.strip() for word in comma_separated_words.split(",")
+            )
     return ignore_words
 
 
 def build_exclude_hashes(filename: str, exclude_lines: Set[str]) -> None:
     with open(filename, encoding="utf-8") as f:
-        for line in f:
-            exclude_lines.add(line)
+        exclude_lines.update(line.rstrip() for line in f)
 
 
 def build_ignore_words(filename: str, ignore_words: Set[str]) -> None:
     with open(filename, encoding="utf-8") as f:
-        for line in f:
-            ignore_words.add(line.strip())
+        ignore_words.update(line.strip() for line in f)
 
 
 def add_misspelling(
@@ -803,7 +810,7 @@ def apply_uri_ignore_words(
 ) -> List[Match[str]]:
     if not uri_ignore_words:
         return check_matches
-    for uri in re.findall(uri_regex, line):
+    for uri in uri_regex.findall(line):
         for uri_word in extract_words(uri, word_regex, ignore_word_regex):
             if uri_word in uri_ignore_words:
                 # determine/remove only the first among matches
@@ -831,10 +838,10 @@ def parse_file(
     bad_count = 0
     lines = None
     changed = False
-    encoding = encodings[0]  # if not defined, use UTF-8
 
     if filename == "-":
         f = sys.stdin
+        encoding = "utf-8"
         lines = f.readlines()
     else:
         if options.check_filenames:
@@ -888,7 +895,7 @@ def parse_file(
             return bad_count
 
     for i, line in enumerate(lines):
-        if line in exclude_lines:
+        if line.rstrip() in exclude_lines:
             continue
 
         fixed_words = set()
@@ -990,6 +997,8 @@ def parse_file(
                         f"{cfilename}:{cline}: {cwrongword} "
                         f"==> {crightword}{creason}"
                     )
+                elif options.stdin_single_line:
+                    print(f"{cline}: {cwrongword} ==> {crightword}{creason}")
                 else:
                     print(
                         f"{cline}: {line.strip()}\n\t{cwrongword} "
@@ -1019,7 +1028,14 @@ def _script_main() -> int:
 
 def main(*args: str) -> int:
     """Contains flow control"""
-    options, parser, used_cfg_files = parse_options(args)
+    try:
+        options, parser, used_cfg_files = parse_options(args)
+    except configparser.Error as e:
+        print(
+            f"ERROR: ill-formed config file: {e.message}",
+            file=sys.stderr,
+        )
+        return EX_CONFIG
 
     # Report used config files
     if not options.quiet_level & QuietLevels.CONFIG_FILES:
@@ -1080,7 +1096,7 @@ def main(*args: str) -> int:
         return EX_USAGE
     uri_ignore_words = parse_ignore_words_option(options.uri_ignore_words_list)
 
-    dictionaries = options.dictionary if options.dictionary else ["-"]
+    dictionaries = options.dictionary or ["-"]
 
     use_dictionaries = []
     for dictionary in dictionaries:
@@ -1161,7 +1177,7 @@ def main(*args: str) -> int:
         return EX_USAGE
 
     bad_count = 0
-    for filename in options.files:
+    for filename in sorted(options.files):
         # ignore hidden files
         if is_hidden(filename, options.check_hidden):
             continue
@@ -1169,11 +1185,11 @@ def main(*args: str) -> int:
         if os.path.isdir(filename):
             for root, dirs, files in os.walk(filename):
                 if glob_match.match(root):  # skip (absolute) directories
-                    del dirs[:]
+                    dirs.clear()
                     continue
                 if is_hidden(root, options.check_hidden):  # dir itself hidden
                     continue
-                for file_ in files:
+                for file_ in sorted(files):
                     # ignore hidden files in directories
                     if is_hidden(file_, options.check_hidden):
                         continue

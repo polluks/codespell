@@ -13,7 +13,13 @@ from typing import Any, Generator, Optional, Tuple, Union
 import pytest
 
 import codespell_lib as cs_
-from codespell_lib._codespell import EX_DATAERR, EX_OK, EX_USAGE, uri_regex_def
+from codespell_lib._codespell import (
+    EX_CONFIG,
+    EX_DATAERR,
+    EX_OK,
+    EX_USAGE,
+    uri_regex_def,
+)
 
 
 def test_constants() -> None:
@@ -21,6 +27,7 @@ def test_constants() -> None:
     assert EX_OK == 0
     assert EX_USAGE == 64
     assert EX_DATAERR == 65
+    assert EX_CONFIG == 78
 
 
 class MainWrapper:
@@ -42,7 +49,7 @@ class MainWrapper:
         assert frame is not None
         capsys = frame.f_locals["capsys"]
         stdout, stderr = capsys.readouterr()
-        assert code in (EX_OK, EX_USAGE, EX_DATAERR)
+        assert code in (EX_OK, EX_USAGE, EX_DATAERR, EX_CONFIG)
         if code == EX_DATAERR:  # have some misspellings
             code = int(stderr.split("\n")[-2])
         elif code == EX_OK and count:
@@ -318,10 +325,21 @@ def test_ignore_dictionary(
 ) -> None:
     """Test ignore dictionary functionality."""
     bad_name = tmp_path / "bad.txt"
-    bad_name.write_text("1 abandonned 1\n2 abandonned 2\nabondon\n")
-    assert cs.main(bad_name) == 3
+    bad_name.write_text(
+        "1 abandonned 1\n"
+        "2 abandonned 2\n"
+        "3 abandonned 3\r\n"
+        "4 abilty 4\n"
+        "5 abilty 5\n"
+        "6 abilty 6\r\n"
+        "7 ackward 7\n"
+        "8 ackward 8\n"
+        "9 ackward 9\r\n"
+        "abondon\n"
+    )
+    assert cs.main(bad_name) == 10
     fname = tmp_path / "ignore.txt"
-    fname.write_text("abandonned\n")
+    fname.write_text("abandonned\nabilty\r\nackward")
     assert cs.main("-I", fname, bad_name) == 1
 
 
@@ -356,11 +374,27 @@ def test_exclude_file(
 ) -> None:
     """Test exclude file functionality."""
     bad_name = tmp_path / "bad.txt"
-    bad_name.write_bytes(b"1 abandonned 1\n2 abandonned 2\n")
-    assert cs.main(bad_name) == 2
+    # check all possible combinations of lines to ignore and ignores
+    combinations = "".join(
+        f"{n} abandonned {n}\n"
+        f"{n} abandonned {n}\r\n"
+        f"{n} abandonned {n} \n"
+        f"{n} abandonned {n} \r\n"
+        for n in range(1, 5)
+    )
+    bad_name.write_bytes(
+        (combinations + "5 abandonned 5\n6 abandonned 6").encode("utf-8")
+    )
+    assert cs.main(bad_name) == 18
     fname = tmp_path / "tmp.txt"
-    fname.write_bytes(b"1 abandonned 1\n")
-    assert cs.main(bad_name) == 2
+    fname.write_bytes(
+        b"1 abandonned 1\n"
+        b"2 abandonned 2\r\n"
+        b"3 abandonned 3 \n"
+        b"4 abandonned 4 \r\n"
+        b"6 abandonned 6\n"
+    )
+    assert cs.main(bad_name) == 18
     assert cs.main("-x", fname, bad_name) == 1
 
 
@@ -442,6 +476,7 @@ def test_ignore(
     assert cs.main("--skip=*ignoredir*", tmp_path) == 1
     assert cs.main("--skip=ignoredir", tmp_path) == 1
     assert cs.main("--skip=*ignoredir/bad*", tmp_path) == 1
+    assert cs.main(f"--skip={tmp_path}", tmp_path) == 0
     badjs = tmp_path / "bad.js"
     copyfile(badtxt, badjs)
     assert cs.main("--skip=*.js", goodtxt, badtxt, badjs) == 1
@@ -1028,7 +1063,7 @@ def test_uri_regex_def() -> None:
         assert not uri_regex.findall(boilerplate % uri), uri
 
 
-def test_quiet_option_32(
+def test_quiet_level_32(
     tmp_path: Path,
     tmpdir: pytest.TempPathFactory,
     capsys: pytest.CaptureFixture[str],
@@ -1055,6 +1090,27 @@ def test_quiet_option_32(
     assert code == 0
     assert "Used config files:" in stdout
     assert "setup.cfg" in stdout
+
+
+def test_ill_formed_ini_config_file(
+    tmp_path: Path,
+    tmpdir: pytest.TempPathFactory,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    d = tmp_path / "files"
+    d.mkdir()
+    conf = str(tmp_path / "setup.cfg")
+    with open(conf, "w") as f:
+        # It should contain but lacks a section.
+        f.write("foobar =\n")
+    args = ("--config", conf)
+
+    # Should not raise a configparser.Error exception.
+    result = cs.main(str(d), *args, std=True)
+    assert isinstance(result, tuple)
+    code, _, stderr = result
+    assert code == 78
+    assert "ill-formed config file" in stderr
 
 
 @pytest.mark.parametrize("kind", ("toml", "cfg"))
@@ -1135,3 +1191,40 @@ def FakeStdin(text: str) -> Generator[None, None, None]:
         yield
     finally:
         sys.stdin = oldin
+
+
+def run_codespell_stdin(
+    text: str,
+    args: Tuple[Any, ...],
+    cwd: Optional[Path] = None,
+) -> int:
+    """Run codespell in stdin mode and return number of lines in output."""
+    proc = subprocess.run(
+        ["codespell", *args, "-"],  # noqa: S603, S607
+        cwd=cwd,
+        input=text,
+        capture_output=True,
+        encoding="utf-8",
+        check=False,
+    )
+    output = proc.stdout
+    # get number of lines
+    count = output.count("\n")
+    return count
+
+
+def test_stdin(tmp_path: Path) -> None:
+    """Test running the codespell executable."""
+    input_file_lines = 4
+    text = ""
+    for _ in range(input_file_lines):
+        text += "abandonned\n"
+    for single_line_per_error in (True, False):
+        args: Tuple[str, ...] = ()
+        if single_line_per_error:
+            args = ("--stdin-single-line",)
+        # we expect 'input_file_lines' number of lines with
+        # --stdin-single-line and input_file_lines * 2 lines without it
+        assert run_codespell_stdin(
+            text, args=args, cwd=tmp_path
+        ) == input_file_lines * (2 - int(single_line_per_error))
