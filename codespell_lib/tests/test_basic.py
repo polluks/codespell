@@ -41,7 +41,7 @@ class MainWrapper:
     ) -> Union[int, Tuple[int, str, str]]:
         args = tuple(str(arg) for arg in args)
         if count:
-            args = ("--count",) + args
+            args = ("--count", *args)
         code = cs_.main(*args)
         frame = inspect.currentframe()
         assert frame is not None
@@ -76,8 +76,7 @@ def run_codespell(
         encoding="utf-8",
         check=False,
     )
-    count = int(proc.stderr.split("\n")[-2])
-    return count
+    return int(proc.stderr.split("\n")[-2])
 
 
 def test_command(tmp_path: Path) -> None:
@@ -159,7 +158,8 @@ def test_basic(
     assert isinstance(result, tuple)
     code, stdout, stderr = result
     assert code == 0
-    assert not stdout and not stderr
+    assert not stdout
+    assert not stderr
     assert cs.main(tmp_path) == 0
 
     # empty directory
@@ -177,9 +177,9 @@ def test_default_word_parsing(
     assert cs.main(fname) == 1, "bad"
 
     fname = tmp_path / "apostrophe"
-    fname.write_text("woudn't\n", encoding="utf-8")  # U+0027 (')
+    fname.write_text("woudn't\n", encoding="utf-8")  # U+0027
     assert cs.main(fname) == 1, "misspelling containing typewriter apostrophe U+0027"
-    fname.write_text("woudn’t\n", encoding="utf-8")  # U+2019 (’)
+    fname.write_text("woudn’t\n", encoding="utf-8")  # U+2019  # noqa: RUF001
     assert cs.main(fname) == 1, "misspelling containing typographic apostrophe U+2019"
 
 
@@ -300,7 +300,8 @@ def test_summary(
     assert isinstance(result, tuple)
     code, stdout, stderr = result
     assert code == 0
-    assert not stdout and not stderr, "no output"
+    assert not stdout
+    assert not stderr, "no output"
     result = cs.main(fname, "--summary", std=True)
     assert isinstance(result, tuple)
     code, stdout, stderr = result
@@ -341,6 +342,43 @@ def test_ignore_dictionary(
     fname = tmp_path / "ignore.txt"
     fname.write_text("abandonned\nabilty\r\nackward")
     assert cs.main("-I", fname, bad_name) == 1
+
+
+def test_ignore_words_with_cases(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Test case-sensitivity implemented for -I and -L options in #3272."""
+    bad_name = tmp_path / "MIS.txt"
+    bad_name.write_text(
+        "1 MIS (Management Information System) 1\n"
+        "2 Les Mis (1980 musical) 2\n"
+        "3 mis 3\n"
+    )
+    assert cs.main(bad_name) == 3
+    assert cs.main(bad_name, "-f") == 4
+    fname = tmp_path / "ignore.txt"
+
+    fname.write_text("miS")
+    assert cs.main("-I", fname, bad_name) == 3
+    assert cs.main("-LmiS", bad_name) == 3
+    assert cs.main("-I", fname, "-f", bad_name) == 4
+    assert cs.main("-LmiS", "-f", bad_name) == 4
+    fname.write_text("MIS")
+    assert cs.main("-I", fname, bad_name) == 2
+    assert cs.main("-LMIS", bad_name) == 2
+    assert cs.main("-I", fname, "-f", bad_name) == 2
+    assert cs.main("-LMIS", "-f", bad_name) == 2
+    fname.write_text("MIS\nMis")
+    assert cs.main("-I", fname, bad_name) == 1
+    assert cs.main("-LMIS,Mis", bad_name) == 1
+    assert cs.main("-I", fname, "-f", bad_name) == 1
+    assert cs.main("-LMIS,Mis", "-f", bad_name) == 1
+    fname.write_text("mis")
+    assert cs.main("-I", fname, bad_name) == 0
+    assert cs.main("-Lmis", bad_name) == 0
+    assert cs.main("-I", fname, "-f", bad_name) == 0
+    assert cs.main("-Lmis", "-f", bad_name) == 0
 
 
 def test_ignore_word_list(
@@ -436,7 +474,8 @@ def test_encoding(
     assert isinstance(result, tuple)
     code, stdout, stderr = result
     assert code == 0
-    assert not stdout and not stderr
+    assert not stdout
+    assert not stderr
     result = cs.main("-q", "0", fname, std=True, count=False)
     assert isinstance(result, tuple)
     code, stdout, stderr = result
@@ -557,9 +596,9 @@ def test_check_hidden(
     #
     #         tmp_path
     #         ├── .abandonned
-    #         │   ├── .abandonned.txt
-    #         │   └── subdir
-    #         │       └── .abandonned.txt
+    #         │   ├── .abandonned.txt
+    #         │   └── subdir
+    #         │       └── .abandonned.txt
     #         └── .abandonned.txt
     #
     assert cs.main(tmp_path) == 0
@@ -589,9 +628,9 @@ def test_check_hidden(
     #
     #         tmp_path
     #         ├── .abandonned
-    #         │   ├── .abandonned.txt
-    #         │   └── subdir
-    #         │       └── .abandonned.txt
+    #         │   ├── .abandonned.txt
+    #         │   └── subdir
+    #         │       └── .abandonned.txt
     #         ├── .abandonned.txt
     #         └── subdir
     #             └── .abandonned
@@ -641,7 +680,7 @@ def _helper_test_case_handling_in_fixes(
     else:
         dictionary_name.write_text("adoptor->adopter, adaptor,\n")
 
-    # the mispelled word is entirely lowercase
+    # the misspelled word is entirely lowercase
     fname = tmp_path / "bad.txt"
     fname.write_text("early adoptor\n")
     result = cs.main("-D", dictionary_name, fname, std=True)
@@ -653,7 +692,7 @@ def _helper_test_case_handling_in_fixes(
     if reason:
         assert "reason" in stdout
 
-    # the mispelled word is capitalized
+    # the misspelled word is capitalized
     fname.write_text("Early Adoptor\n")
     result = cs.main("-D", dictionary_name, fname, std=True)
     assert isinstance(result, tuple)
@@ -664,7 +703,7 @@ def _helper_test_case_handling_in_fixes(
     if reason:
         assert "reason" in stdout
 
-    # the mispelled word is entirely uppercase
+    # the misspelled word is entirely uppercase
     fname.write_text("EARLY ADOPTOR\n")
     result = cs.main("-D", dictionary_name, fname, std=True)
     assert isinstance(result, tuple)
@@ -675,7 +714,7 @@ def _helper_test_case_handling_in_fixes(
     if reason:
         assert "reason" in stdout
 
-    # the mispelled word mixes lowercase and uppercase
+    # the misspelled word mixes lowercase and uppercase
     fname.write_text("EaRlY AdOpToR\n")
     result = cs.main("-D", dictionary_name, fname, std=True)
     assert isinstance(result, tuple)
@@ -1113,7 +1152,7 @@ def test_ill_formed_ini_config_file(
     assert "ill-formed config file" in stderr
 
 
-@pytest.mark.parametrize("kind", ("toml", "cfg"))
+@pytest.mark.parametrize("kind", ["cfg", "toml", "toml_list"])
 def test_config_toml(
     tmp_path: Path,
     capsys: pytest.CaptureFixture[str],
@@ -1145,7 +1184,7 @@ skip = bad.txt, whatever.txt
 count =
 """
         )
-    else:
+    elif kind == "toml":
         assert kind == "toml"
         if sys.version_info < (3, 11):
             pytest.importorskip("tomli")
@@ -1155,6 +1194,20 @@ count =
             """\
 [tool.codespell]
 skip = 'bad.txt,whatever.txt'
+check-filenames = false
+count = true
+"""
+        )
+    else:
+        assert kind == "toml_list"
+        if sys.version_info < (3, 11):
+            pytest.importorskip("tomli")
+        tomlfile = tmp_path / "pyproject.toml"
+        args = ("--toml", tomlfile)
+        tomlfile.write_text(
+            """\
+[tool.codespell]
+skip = ['bad.txt', 'whatever.txt']
 check-filenames = false
 count = true
 """
@@ -1209,8 +1262,7 @@ def run_codespell_stdin(
     )
     output = proc.stdout
     # get number of lines
-    count = output.count("\n")
-    return count
+    return output.count("\n")
 
 
 def test_stdin(tmp_path: Path) -> None:

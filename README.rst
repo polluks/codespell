@@ -116,7 +116,7 @@ Want to know if a word you're proposing exists in codespell already? It is possi
 
 You can select the optional dictionaries with the ``--builtin`` option.
 
-Ignoring Words
+Ignoring words
 --------------
 
 When ignoring false positives, note that spelling errors are *case-insensitive* but words to ignore are *case-sensitive*. For example, the dictionary entry ``wrod`` will also match the typo ``Wrod``, but to ignore it you must pass ``wrod``.
@@ -152,6 +152,11 @@ be specified in this file (without the preceding dashes), for example:
     count =
     quiet-level = 3
 
+The ``.codespellrc`` file is an `INI file <https://en.wikipedia.org/wiki/INI_file>`_,
+which is read using Python's
+`configparser <https://docs.python.org/3/library/configparser.html#supported-ini-file-structure>`_.
+For example, comments are possible using ``;`` or ``#`` as the first character.
+
 Codespell will also check in the current directory for a ``pyproject.toml``
 (or a path can be specified via ``--toml <filename>``) file, and the
 ``[tool.codespell]`` entry will be used, but only if the tomli_ package
@@ -161,7 +166,7 @@ is installed for versions of Python prior to 3.11. For example:
 
     [tool.codespell]
     skip = '*.po,*.ts,./src/3rdParty,./src/Test'
-    count = ''
+    count = true
     quiet-level = 3
 
 These are both equivalent to running:
@@ -186,10 +191,10 @@ config files.
 
 .. _tomli: https://pypi.org/project/tomli/
 
-`pre-commit <https://pre-commit.com/>`_ hook
---------------------------------------------
+pre-commit hook
+---------------
 
-codespell also works with `pre-commit`, using
+codespell also works with `pre-commit <https://pre-commit.com/>`_, using
 
 .. code-block:: yaml
 
@@ -243,7 +248,7 @@ applied directly, but should instead be manually inspected. E.g.:
 
        clas->class, clash, disabled because of name clash in c++
 
-Development Setup
+Development setup
 -----------------
 
 As suggested in the `Python Packaging User Guide`_, ensure ``pip``, ``setuptools``, and ``wheel`` are up to date before installing from source. Specifically you will need recent versions of ``setuptools`` and ``setuptools_scm``:
@@ -266,7 +271,7 @@ To run tests against the codebase run:
 
 .. _Python Packaging User Guide: https://packaging.python.org/en/latest/tutorials/installing-packages/#requirements-for-installing-packages
 
-Sending Pull Requests
+Sending pull requests
 ---------------------
 
 If you have a suggested typo that you'd like to see merged please follow these steps:

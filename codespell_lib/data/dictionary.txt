@@ -680,6 +680,7 @@ acceppts->accepts
 acceps->accepts
 acceptabel->acceptable
 acceptabil->acceptable
+accepteed->accepted
 acceptence->acceptance
 acceptes->accepts
 acceptible->acceptable
@@ -1518,6 +1519,8 @@ acquisation->acquisition
 acquisito->acquisition
 acquisiton->acquisition
 acquisitons->acquisitions
+acquistion->acquisition
+acquistions->acquisitions
 acquited->acquitted
 acquition->acquisition
 acqure->acquire
@@ -6047,6 +6050,7 @@ asynchrouns->asynchronous
 asynchrounsly->asynchronously
 asyncronous->asynchronous
 asyncronously->asynchronously
+asyncrounesouly->asynchronously
 asynnc->async
 asynnchronous->asynchronous
 asynnchronously->asynchronously
@@ -8115,6 +8119,7 @@ bootstraper->bootstrapper
 bootstrapers->bootstrappers
 bootstraping->bootstrapping
 bootstras->bootstraps
+bootup->boot up, boot-up,
 booundaries->boundaries
 booundary->boundary
 boounds->bounds
@@ -9702,6 +9707,15 @@ catgorized->categorized
 catgorizes->categorizes
 catgorizing->categorizing
 catgory->category
+cathegorise->categorise
+cathegorised->categorised
+cathegorises->categorises
+cathegorising->categorising
+cathegorize->categorize
+cathegorized->categorized
+cathegorizes->categorizes
+cathegorizing->categorizing
+cathegory->category
 cathlic->catholic
 catholocism->catholicism
 catloag->catalog
@@ -13009,6 +13023,7 @@ concered->concerned
 concerened->concerned
 concering->concerning
 concerntrating->concentrating
+concerte->concrete, concerts, concert, concerto, concerted,
 conchance->conscience
 conchances->consciences
 conchus->conscious
@@ -19010,6 +19025,8 @@ dialouges->dialogues
 diamater->diameter
 diamaters->diameters
 diamon->diamond
+diamonnd->diamond
+diamonnds->diamonds
 diamons->diamonds
 diamter->diameter
 diamters->diameters
@@ -21353,6 +21370,7 @@ efffectiveness->effectiveness
 efffects->effects
 efffort->effort
 effforts->efforts
+efficacity->efficacy
 efficcient->efficient
 efficencty->efficiency
 efficency->efficiency
@@ -21417,6 +21435,8 @@ ehther->ether, either,
 ehthernet->ethernet
 eiegn->eigen, reign,
 eighter->either
+eignvalue->eigenvalue
+eignvalues->eigenvalues
 eigth->eighth, eight,
 eihter->either
 einstance->instance
@@ -22044,6 +22064,12 @@ enforceing->enforcing
 enforcmement->enforcement
 enforcment->enforcement
 enfore->enforce
+enforece->enforce
+enforeced->enforced
+enforecer->enforcer
+enforecers->enforcers
+enforeces->enforces
+enforecing->enforcing
 enfored->enforced
 enfores->enforces
 enforing->enforcing
@@ -23222,6 +23248,8 @@ exceprts->excerpts
 exceptation->expectation
 exceptin->excepting, exception, expecting, accepting,
 exceptins->exceptions, excepting,
+exceptioin->exception
+exceptioins->exceptions
 exceptionnal->exceptional
 exceptionss->exceptions
 exceptionts->exceptions
@@ -25064,7 +25092,7 @@ falsk->flask, false,
 falsks->flasks
 falsly->falsely
 falso->false
-falt->fault
+falt->fault, flat,
 falure->failure
 falures->failures
 familar->familiar
@@ -26785,6 +26813,10 @@ geneations->generations
 geneator->generator
 geneators->generators
 geneic->generic, genetic,
+genenerate->generate
+genenerated->generated
+genenerates->generates
+genenerating->generating
 geneological->genealogical
 geneologies->genealogies
 geneology->genealogy
@@ -27549,6 +27581,8 @@ handeled->handled, handheld,
 handeler->handler
 handeles->handles
 handeling->handling
+handelr->handler
+handelrs->handlers
 handels->handles
 hander->handler
 handfull->handful
@@ -27787,6 +27821,8 @@ hemipshere->hemisphere
 hemipsheres->hemispheres
 hemishpere->hemisphere
 hemishperes->hemispheres
+hemispere->hemisphere
+hemisperes->hemispheres
 hemlholtz->Helmholtz
 hemmorhage->haemorrhage, hemorrhage,
 hemmorhaged->haemorrhaged, hemorrhaged,
@@ -30761,6 +30797,7 @@ inpsections->inspections
 inpsector->inspector
 inpsectors->inspectors
 inpsects->inspects
+inpt->input
 inpterpreter->interpreter
 inpu->input
 inpust->input, inputs,
@@ -31053,6 +31090,12 @@ instroduces->introduces
 instroducing->introducing
 instroduction->introduction
 instroductions->introductions
+instroment->instrument
+instromentation->instrumentation
+instromentations->instrumentations
+instromented->instrumented
+instromenting->instrumenting
+instroments->instruments
 instrospection->introspection
 instruccion->instruction
 instruccional->instructional
@@ -31958,6 +32001,8 @@ invalaid->invalid
 invald->invalid
 invaldates->invalidates
 invalde->invalid
+invalidaiton->invalidation
+invalidaitons->invalidations
 invalidatiopn->invalidation
 invalide->invalid
 invalidiate->invalidate
@@ -35959,6 +36004,8 @@ nams->names
 namspace->namespace
 namspaces->namespaces
 nane->name
+nanoparicle->nanoparticle
+nanoparicles->nanoparticles
 nanosecod->nanosecond
 nanosecods->nanoseconds
 nanosencond->nanosecond
@@ -37880,6 +37927,7 @@ ontent->content, intent,
 ontents->contents, intents,
 ontext->context
 onthe->on the
+ontho->onto, on to,
 ontop->on top
 ontrol->control
 ontrolled->controlled
@@ -38649,6 +38697,8 @@ othopaedic->orthopaedic
 othopaedics->orthopaedics
 othopedic->orthopedic
 othopedics->orthopedics
+othre->other, ochre,
+othres->others
 othwerise->otherwise
 othwerwise->otherwise
 othwhise->otherwise
@@ -39801,7 +39851,7 @@ pathc->patch
 pathced->patched
 pathces->patches
 pathcing->patching
-pathes->paths
+pathes->paths, patches,
 pathign->pathing
 pathnme->pathname
 patholgoical->pathological
@@ -40293,7 +40343,7 @@ perposing->proposing, purposing,
 perpsective->perspective
 perpsectives->perspectives
 perrror->perror
-persan->person
+persan->person, persian,
 persciuos->precious
 persciuosly->preciously
 perscius->precious
@@ -43346,6 +43396,7 @@ quanitifying->quantifying
 quanititative->quantitative
 quanitities->quantities
 quanitity->quantity
+quanitization->quantization
 quanity->quantity
 quanlification->qualification, quantification,
 quanlified->qualified, quantified,
@@ -43653,6 +43704,10 @@ rceate->create
 rceating->creating
 rduce->reduce
 re-attachement->re-attachment
+re-declare->redeclare
+re-declared->redeclared
+re-declares->redeclares
+re-declaring->redeclaring
 re-defiend->re-defined
 re-engeneer->re-engineer
 re-engeneering->re-engineering
@@ -44426,6 +44481,13 @@ recommnds->recommends
 recommned->recommend
 recommneded->recommended
 recommneds->recommends
+recommond->recommend
+recommondation->recommendation
+recommondations->recommendations
+recommonded->recommended
+recommonder->recommender
+recommonding->recommending
+recommonds->recommends
 recommpile->recompile
 recommpiled->recompiled
 recompence->recompense
@@ -47695,6 +47757,18 @@ sandwitch->sandwich, sand witch,
 sandwitched->sandwiched
 sandwitches->sandwiches, sand witches,
 sandwitching->sandwiching
+sanetise->sanitise
+sanetised->sanitised
+sanetiser->sanitiser
+sanetisers->sanitisers
+sanetises->sanitises
+sanetising->sanitising
+sanetize->sanitize
+sanetized->sanitized
+sanetizer->sanitizer
+sanetizers->sanitizers
+sanetizes->sanitizes
+sanetizing->sanitizing
 Sanhedrim->Sanhedrin
 sanitizisation->sanitization
 sanizer->sanitizer
@@ -48596,6 +48670,7 @@ sensative->sensitive
 sensativity->sensitivity
 sensetive->sensitive
 sensetivity->sensitivity
+sensibile->sensible
 sensisble->sensible
 sensistive->sensitive
 sensistively->sensitively, sensitivity,
@@ -50144,6 +50219,7 @@ socalist->socialist
 socalists->socialists
 socekt->socket
 socekts->sockets
+socio-economic->socioeconomic
 socities->societies
 socre->score
 socred->scored, sacred,
@@ -51052,7 +51128,10 @@ speration->separation
 sperations->separations
 sperator->separator
 sperators->separators
+spere->sphere, spare, spire, spore,
+speres->spheres, spares, spires, spores,
 sperhical->spherical
+sperical->spherical
 spermatozoan->spermatozoon
 speshal->special
 speshally->specially, especially,
@@ -54648,6 +54727,7 @@ torpeados->torpedoes
 torpedos->torpedoes
 tortilini->tortellini
 tortise->tortoise
+tortoitse->tortoise, tortoises,
 torward->toward
 torwards->towards
 Tosday->Tuesday, today,
@@ -57507,6 +57587,8 @@ validadion->validation
 validadions->validations
 validador->validator
 validadors->validators
+validaiton->validation
+validaitons->validations
 validata->validate
 validataion->validation
 validataions->validations
