@@ -3802,6 +3802,12 @@ annhilates->annihilates
 annhilating->annihilating
 annhilation->annihilation
 annhilations->annihilations
+annhiliate->annihilate
+annhiliated->annihilated
+annhiliates->annihilates
+annhiliating->annihilating
+annhiliation->annihilation
+annhiliations->annihilations
 anniversery->anniversary
 annnotate->annotate
 annnotated->annotated
@@ -18157,6 +18163,8 @@ desactivated->deactivated
 desactivates->deactivates
 desactivation->deactivation
 desactivations->deactivations
+desagreement->disagreement
+desagreements->disagreements
 desallocate->deallocate
 desallocated->deallocated
 desallocates->deallocates
@@ -25084,6 +25092,7 @@ fallhrough->fallthrough
 fallthough->fallthrough
 fallthruogh->fallthrough
 falltrough->fallthrough
+fals->fails, falls, false,
 falsh->flash, false,
 falshed->flashed
 falshes->flashes
@@ -26579,6 +26588,8 @@ funxtionality->functionality
 funxtioned->functioned
 funxtioning->functioning
 funxtions->functions
+furance->furnace
+furances->furnaces
 furether->further
 furethermore->furthermore
 furethest->furthest
@@ -27274,6 +27285,7 @@ granuality->granularity
 granualtiry->granularity
 granularty->granularity
 granulatiry->granularity
+grap->grep, grape,
 grapgic->graphic
 grapgical->graphical
 grapgics->graphics
@@ -30052,6 +30064,10 @@ inhertiing->inheriting
 inherting->inheriting
 inhertis->inherits
 inherts->inherits
+inhibate->inhibit
+inhibated->inhibited
+inhibates->inhibits
+inhibating->inhibiting
 inhomogenous->inhomogeneous
 inialisation->initialisation
 inialisations->initialisations
@@ -30460,6 +30476,10 @@ initialzer->initializer
 initialzers->initializers
 initialzes->initializes
 initialzing->initializing
+initiase->initialise
+initiased->initialised
+initiases->initialises
+initiasing->initialising
 initiater->initiator, initiated, initiates, initiate,
 initiaters->initiators, initiates,
 initiatiate->initiate
@@ -30473,6 +30493,10 @@ initiatied->initiated
 initiaties->initiates
 initiatve->initiative, initiate,
 initiatves->initiatives, initiates,
+initiaze->initialize
+initiazed->initialized
+initiazes->initializes
+initiazing->initializing
 initiial->initial
 initiialisation->initialisation
 initiialisations->initialisations
@@ -31523,6 +31547,12 @@ internatioanlist->internationalist
 internatioanlists->internationalists
 internatioanlly->internationally
 internation->international
+internationnal->international
+internationnalism->internationalism
+internationnalist->internationalist
+internationnalists->internationalists
+internationnally->internationally
+internationnaly->internationally
 internel->internal
 internels->internals
 internface->interface
@@ -38353,6 +38383,8 @@ optimisim->optimism
 optimisitc->optimistic
 optimisitic->optimistic
 optimissm->optimism
+optimistaion->optimisation
+optimistaions->optimisations
 optimitation->optimization
 optimizaing->optimizing
 optimizaton->optimization
@@ -38365,6 +38397,8 @@ optimizier->optimizer
 optimiziers->optimizers
 optimizies->optimizes
 optimiziing->optimizing
+optimiztaion->optimization
+optimiztaions->optimizations
 optimiztion->optimization
 optimiztions->optimizations
 optimsitic->optimistic
@@ -39875,6 +39909,8 @@ patition->partition, petition,
 patitioned->partitioned, petitioned,
 patitioning->partitioning, petitioning,
 patitions->partitions, petitions,
+patnership->partnership
+patnerships->partnerships
 patren->patron, pattern,
 patrens->patrons, patterns,
 patrent->parent, patent, patron,
@@ -47731,9 +47767,13 @@ samll->small
 samller->smaller
 sammon->salmon
 samori->samurai
+sampe->sample
+samped->sampled
 sampel->sample
 sampeld->sampled
 sampels->samples
+sampes->samples
+samping->sampling
 samue->same, Samuel,
 samwich->sandwich
 samwiched->sandwiched
@@ -55617,6 +55657,7 @@ trrigger->trigger
 trriggered->triggered
 trriggering->triggering
 trriggers->triggers
+tru->through, true,
 trubador->troubadour
 trubadors->troubadours
 trubadour->troubadour
@@ -56305,6 +56346,7 @@ undoubtely->undoubtedly
 undreground->underground
 unduely->unduly
 undupplicated->unduplicated
+uneared->unearned
 uneccesarily->unnecessarily
 uneccesary->unnecessary
 uneccessarily->unnecessarily
@@ -57089,6 +57131,10 @@ upates->updates
 upating->updating
 upccoming->upcoming
 upcomming->upcoming
+updadate->update
+updadated->updated
+updadates->updates
+updadating->updating
 updae->update
 updaed->updated
 updaer->updater
