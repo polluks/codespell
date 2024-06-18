@@ -3,6 +3,7 @@ acapella->a cappella
 accreting->accrediting
 acter->actor
 acters->actors
+aer->are
 afterwords->afterwards
 amination->animation, lamination,
 aminations->animations, laminations,
@@ -23,6 +24,10 @@ bloc->block
 blocs->blocks
 bodgy->body
 brining->bringing
+brunch->branch
+brunched->branched
+brunches->branches
+brunching->branching
 bu->by, be, but, bug, bun, bud, buy, bum,
 buss->bus
 busses->buses
@@ -53,6 +58,7 @@ consequentially->consequently
 convertor->converter
 convertors->converters
 coo->coup
+cooly->coolly, coolie,
 copping->coping, copying, cropping,
 corespondent->correspondent
 corespondents->correspondents
@@ -97,6 +103,7 @@ fave->save
 finial->final
 finis->finish
 finises->finishes
+firs->first
 floaw->flow, float,
 floaws->flows, floats,
 florescent->fluorescent
@@ -113,9 +120,13 @@ girds->grids
 guarantied->guaranteed
 guerilla->guerrilla
 guerillas->guerrillas
+göyph->glyph
 habitant->inhabitant
 habitants->inhabitants
 hart->heart, harm,
+heighth->height, eight, eighth,
+heighths->heights, eights, eighths,
+hep->heap, help,
 heterogenous->heterogeneous
 hided->hidden, hid,
 hims->his, hymns,
@@ -132,6 +143,7 @@ infarctions->infractions
 ingenuous->ingenious
 inly->only
 irregardless->regardless
+joo->you
 knifes->knives
 lama->llama
 lamas->llamas
@@ -140,6 +152,8 @@ lamdas->lambdas
 leaded->led, lead,
 leas->least, lease,
 lief->leaf, life,
+lien->line
+liens->lines
 lightening->lightning, lighting,
 loafing->loading
 loath->loathe
@@ -190,6 +204,7 @@ preformed->performed
 preforming->performing
 preforms->performs
 pres->press
+presidence->precedence, presidency,
 prioritary->priority
 processus->processes, process,
 programed->programmed
@@ -197,6 +212,8 @@ programer->programmer
 programers->programmers
 programing->programming
 prosses->process, processes, possess,
+protestor->protester
+protestors->protesters
 provence->province
 purportive->supportive
 purvue->purview
@@ -223,7 +240,6 @@ rime->rhyme
 rouge->rogue
 sate->state
 sates->states
-savable->saveable
 scrip->script
 scrips->scripts
 seizin->seizing
@@ -257,6 +273,7 @@ tittles->title
 toke->token, took,
 tread->thread, treat,
 trough->through
+underate->underrate
 unknow->unknown
 unknows->unknowns
 unsecure->insecure
