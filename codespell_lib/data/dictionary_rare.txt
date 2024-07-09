@@ -9,6 +9,7 @@ amination->animation, lamination,
 aminations->animations, laminations,
 aminator->animator, laminator,
 aminators->animators, laminators,
+anc->and
 ans->and
 arithmetics->arithmetic
 attache->attaché, attached, attach,
@@ -130,6 +131,7 @@ hep->heap, help,
 heterogenous->heterogeneous
 hided->hidden, hid,
 hims->his, hymns,
+homs->homes, hams, hems,
 hove->have, hover, love,
 impassible->impassable, impossible,
 implementor->implementer
@@ -158,6 +160,7 @@ lightening->lightning, lighting,
 loafing->loading
 loath->loathe
 lod->load, loud, lode,
+loner->longer
 loos->loose, lose,
 loosing->losing
 lousily->loosely
@@ -231,6 +234,8 @@ refection->reflection
 refections->reflections
 refective->reflective
 refects->reflects
+regraded->regarded
+regrading->regarding
 remainer->remainder
 remainers->remainders
 retuned->returned

@@ -9,6 +9,7 @@ from io import StringIO
 from pathlib import Path
 from shutil import copyfile
 from typing import Any, Generator, Optional, Tuple, Union
+from unittest import mock
 
 import pytest
 
@@ -69,8 +70,8 @@ def run_codespell(
 ) -> int:
     """Run codespell."""
     args = tuple(str(arg) for arg in args)
-    proc = subprocess.run(
-        ["codespell", "--count", *args],  # noqa: S603, S607
+    proc = subprocess.run(  # noqa: S603
+        ["codespell", "--count", *args],  # noqa: S607
         cwd=cwd,
         capture_output=True,
         encoding="utf-8",
@@ -237,7 +238,11 @@ def test_interactivity(
     try:
         assert cs.main(fname) == 0, "empty file"
         fname.write_text("abandonned\n")
-        assert cs.main("-i", "-1", fname) == 1, "bad"
+        with mock.patch.object(sys, "argv", ("-i", "-1", fname)):
+            with pytest.raises(SystemExit) as e:
+                cs.main("-i", "-1", fname)
+            assert e.type is SystemExit
+            assert e.value.code != 0
         with FakeStdin("y\n"):
             assert cs.main("-i", "3", fname) == 1
         with FakeStdin("n\n"):
@@ -813,7 +818,7 @@ def _helper_test_case_handling_in_fixes(
 def test_case_handling_in_fixes(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    """Test that the case of fixes is similar to the mispelled word."""
+    """Test that the case of fixes is similar to the misspelled word."""
     _helper_test_case_handling_in_fixes(tmp_path, capsys, reason=False)
     _helper_test_case_handling_in_fixes(tmp_path, capsys, reason=True)
 
@@ -935,6 +940,43 @@ def test_ignore_regex_option(
     assert cs.main(fname, "--ignore-regex=donn") == 0
     # Adding word breaks causes only one to be ignored.
     assert cs.main(fname, r"--ignore-regex=\bdonn\b") == 1
+
+
+def test_ignore_multiline_regex_option(
+    tmp_path: Path,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    """Test ignore regex option functionality."""
+
+    # Invalid regex.
+    result = cs.main("--ignore-multiline-regex=(", std=True)
+    assert isinstance(result, tuple)
+    code, stdout, _ = result
+    assert code == EX_USAGE
+    assert "usage:" in stdout
+
+    fname = tmp_path / "flag.txt"
+    fname.write_text(
+        """
+        Please see http://example.com/abandonned for info
+        # codespell:ignore-begin
+        '''
+        abandonned
+        abandonned
+        '''
+        # codespell:ignore-end
+        abandonned
+        """
+    )
+    assert cs.main(fname) == 4
+    assert (
+        cs.main(
+            fname,
+            "--ignore-multiline-regex",
+            "codespell:ignore-begin.*codespell:ignore-end",
+        )
+        == 2
+    )
 
 
 def test_uri_regex_option(
@@ -1339,8 +1381,8 @@ def run_codespell_stdin(
     cwd: Optional[Path] = None,
 ) -> int:
     """Run codespell in stdin mode and return number of lines in output."""
-    proc = subprocess.run(
-        ["codespell", *args, "-"],  # noqa: S603, S607
+    proc = subprocess.run(  # noqa: S603
+        ["codespell", *args, "-"],  # noqa: S607
         cwd=cwd,
         input=text,
         capture_output=True,
