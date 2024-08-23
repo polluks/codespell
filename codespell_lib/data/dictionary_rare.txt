@@ -158,7 +158,6 @@ lien->line
 liens->lines
 lightening->lightning, lighting,
 loafing->loading
-loath->loathe
 lod->load, loud, lode,
 loner->longer
 loos->loose, lose,
@@ -238,6 +237,7 @@ regraded->regarded
 regrading->regarding
 remainer->remainder
 remainers->remainders
+repot->report, repost,
 retuned->returned
 retying->retrying
 revered->reversed

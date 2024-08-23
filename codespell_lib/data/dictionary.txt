@@ -2614,6 +2614,7 @@ agani->again
 aganist->against
 agant->agent
 agants->agents, against,
+agein->again, ageing,
 aggaravate->aggravate
 aggaravated->aggravated
 aggaravates->aggravates
@@ -3832,6 +3833,7 @@ altitide->altitude
 altitute->altitude
 altnerately->alternately
 altogehter->altogether
+altogher->altogether
 altogheter->altogether
 altough->although
 altought->although
@@ -5471,6 +5473,8 @@ applicaton->application
 applicatons->applications
 applicble->applicable
 applicible->applicable
+applictaion->application
+applictaions->applications
 appliction->application
 applictions->applications
 applide->applied
@@ -9732,6 +9736,7 @@ boostrappers->bootstrappers
 boostrapping->bootstrapping
 boostraps->bootstraps
 booteek->boutique
+bootime->boot time
 bootlaoder->bootloader
 bootlaoders->bootloaders
 bootle->bottle
@@ -10971,8 +10976,10 @@ capabilitiy->capability
 capabillities->capabilities
 capabillity->capability
 capabilties->capabilities
+capabiltiies->capabilities
 capabiltities->capabilities
 capabiltity->capability
+capabiltiy->capability
 capabilty->capability
 capabitilies->capabilities
 capabitily->capability
@@ -12834,6 +12841,10 @@ clame->claim
 clammer->clamber, clamor,
 clanup->cleanup
 clanups->cleanups
+clapse->collapse, clasp, claps, lapse,
+clapsed->collapsed
+clapses->collapses
+clapsing->collapsing
 claravoyant->clairvoyant
 claravoyantes->clairvoyants
 claravoyants->clairvoyants
@@ -12996,6 +13007,7 @@ cliboard->clipboard
 cliboards->clipboards
 clibpoard->clipboard
 clibpoards->clipboards
+clicable->clickable
 clickin->clicking, click in,
 cliens->clients
 cliensite->client-side
@@ -14503,7 +14515,7 @@ complets->completes
 complette->complete
 complettly->completely
 complety->completely
-complext->complexity
+complext->complexity, complex,
 complextion->complexion
 complextions->complexions
 compliace->compliance
@@ -14709,6 +14721,8 @@ comverter->converter
 comverters->converters
 comverting->converting
 comverts->converts
+comvolution->convolution
+comvolutions->convolutions
 conact->contact
 conacted->contacted
 conacting->contacting
@@ -19586,6 +19600,8 @@ demagogs->demagogues
 demaind->demand
 demandin->demanding, demand in,
 demaned->demand, demeaned,
+demaond->demand
+demaonds->demands
 demenor->demeanor
 demension->dimension
 demensional->dimensional
@@ -24348,6 +24364,7 @@ enternal->internal, external, eternal,
 enternally->internally, externally, eternally,
 enterprice->enterprise
 enterprices->enterprises
+enterpris->enterprise
 entertainin->entertaining, entertain in,
 entery->entry
 enteties->entities
@@ -24367,6 +24384,7 @@ enthusiatically->enthusiastically
 entierly->entirely
 entired->entered, entire,
 entireity->entirety
+entirerly->entirely
 entires->entries
 entirey->entirely
 entirity->entirety
@@ -24685,6 +24703,7 @@ equivalancy->equivalency
 equivalant->equivalent
 equivalantly->equivalently
 equivalants->equivalents
+equivalen->equivalent
 equivalenet->equivalent, equivalents,
 equivalentsly->equivalently, equivalency,
 equivallent->equivalent
@@ -27154,6 +27173,7 @@ extrem->extremum, extreme,
 extremaly->extremely
 extremeley->extremely
 extremelly->extremely
+extremem->extreme
 extrememe->extreme
 extrememely->extremely
 extrememly->extremely
@@ -27426,6 +27446,13 @@ fauture->feature
 fautured->featured
 fautures->features
 fauturing->featuring
+favilitate->facilitate
+favilitated->facilitated
+favilitates->facilitates
+favilitating->facilitating
+favilitation->facilitation
+favilitator->facilitator
+favilitators->facilitators
 favorin->favoring, favor in,
 favoutrable->favourable
 favritt->favorite
@@ -32255,6 +32282,7 @@ indivudual->individual
 indivudually->individually
 indivuduals->individuals
 indizies->indices
+indoro->indoor
 indpendent->independent
 indpendently->independently
 indrect->indirect
@@ -32338,6 +32366,8 @@ infalte->inflate
 infalted->inflated
 infaltes->inflates
 infalting->inflating
+infastructure->infrastructure
+infastructures->infrastructures
 infectuous->infectious
 infered->inferred
 inferface->interface
@@ -36867,6 +36897,7 @@ mathods->methods
 matinay->matinee
 matirx->matrix
 matix->matrix
+matrces->matrices
 matreial->material
 matreials->materials
 matresses->mattresses
@@ -37445,6 +37476,7 @@ Microsof->Microsoft
 Microsofot->Microsoft
 Micrsft->Microsoft
 Micrsoft->Microsoft
+middel->middle
 middlware->middleware
 mideval->medieval
 midevil->medieval
@@ -37700,6 +37732,10 @@ mirorred->mirrored
 mirorring->mirroring
 mirorrs->mirrors
 mirors->mirrors, minors,
+mirrir->mirror
+mirrired->mirrored
+mirriring->mirroring
+mirrirs->mirrors
 mirro->mirror
 mirroed->mirrored
 mirrorin->mirroring, mirror in,
@@ -45775,6 +45811,8 @@ prohibt->prohibit
 prohibted->prohibited
 prohibting->prohibiting
 prohibts->prohibits
+proir->prior
+proirities->priorities
 proirity->priority
 projcet->project
 projcets->projects
@@ -47189,6 +47227,7 @@ reademe->README
 readiable->readable
 readibility->readability
 readible->readable
+readibly->readably
 readig->reading
 readigs->readings
 readin->reading, read in,
@@ -47651,6 +47690,7 @@ recogninse->recognise
 recognisin->recognising
 recognizeable->recognizable
 recognizin->recognizing
+recognizion->recognition
 recognzied->recognized
 recomend->recommend
 recomendation->recommendation
@@ -48014,6 +48054,8 @@ reduceable->reducible
 reducin->reducing
 redudancy->redundancy
 redudant->redundant
+redumndancy->redundancy
+redumndant->redundant
 redunancy->redundancy
 redunant->redundant
 redundacy->redundancy
@@ -48658,6 +48700,7 @@ releaing->releasing
 releant->relevant, relent,
 releas->release
 releasead->released
+releaseds->released, releases,
 releaseing->releasing
 releasin->releasing
 releasse->release
@@ -51834,6 +51877,7 @@ seeging->sieging
 seein->seeing, see in, seen, stein,
 seelect->select
 seelected->selected
+seemd->seemed
 seemes->seems
 seemless->seamless
 seemlessly->seamlessly
@@ -52335,6 +52379,8 @@ seplicurally->sepulchrally
 seplicuraly->sepulchrally
 seplicurlly->sepulchrally
 seporate->separate
+sepparatelly->separately
+sepparately->separately
 sepparation->separation
 sepparations->separations
 sepperate->separate
@@ -55507,7 +55553,11 @@ stuructured->structured
 stuructures->structures
 sturucturing->structuring
 stutdown->shutdown
+stutied->studied
+stuties->studies
 stutus->status
+stuty->study
+stutying->studying
 styed->stayed, styled,
 styhe->style
 styile->style
@@ -55886,6 +55936,7 @@ succefull->successful, successfully,
 succefully->successfully
 succefuly->successfully
 succes->success
+succesdsful->successful
 succesful->successful
 succesfull->successful
 succesfullly->successfully
