@@ -119,7 +119,7 @@ You can select the optional dictionaries with the ``--builtin`` option.
 Ignoring words
 --------------
 
-When ignoring false positives, note that spelling errors are *case-insensitive* but words to ignore are *case-sensitive*. For example, the dictionary entry ``wrod`` will also match the typo ``Wrod``, but to ignore it you must pass ``Wrod``.
+When ignoring false positives, note that spelling errors are *case-insensitive* but words to ignore are *case-sensitive*. For example, the dictionary entry ``wrod`` will also match the typo ``Wrod``, but to ignore it you must pass ``wrod`` (to match the case of the dictionary entry).
 
 The words to ignore can be passed in two ways:
 
@@ -217,7 +217,7 @@ you need to do this, structure your entries like this:
 
     [codespell]
     dictionary = mydict,-
-    ignore-words = bar,-foo
+    ignore-words-list = bar,-foo
 
 instead of these invalid entries:
 
@@ -225,7 +225,7 @@ instead of these invalid entries:
 
     [codespell]
     dictionary = -,mydict
-    ignore-words = -foo,bar
+    ignore-words-list = -foo,bar
 
 .. _tomli: https://pypi.org/project/tomli/
 
@@ -237,7 +237,7 @@ codespell also works with `pre-commit <https://pre-commit.com/>`_, using
 .. code-block:: yaml
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.4
+    rev: v2.4.1
     hooks:
     - id: codespell
 
@@ -246,7 +246,7 @@ If one configures codespell using the `pyproject.toml` file instead use:
 .. code-block:: yaml
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.4
+    rev: v2.4.1
     hooks:
     - id: codespell
       additional_dependencies:
