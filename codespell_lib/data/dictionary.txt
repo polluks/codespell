@@ -9657,6 +9657,8 @@ binay->binary
 bindin->binding, bind in, bindi, bindis,
 bindins->bindings
 binidng->binding
+binnaries->binaries
+binnary->binary
 binominal->binomial
 binraries->binaries
 binrary->binary
@@ -10815,6 +10817,15 @@ calibraitons->calibrations
 calibratin->calibrating, calibration,
 calibrte->calibrate
 calibrtion->calibration
+calid->valid, canid,
+calidate->validate
+calidated->validated
+calidates->validates
+calidating->validating
+calidation->validation
+calidations->validations
+calidator->validator
+calidators->validators
 caligraphy->calligraphy
 calilng->calling
 caliming->claiming
@@ -17202,6 +17213,13 @@ copmiler->compiler
 copmilers->compilers
 copmiles->compiles
 copmiling->compiling
+copmlete->complete
+copmleted->completed
+copmletely->completely
+copmletes->completes
+copmleting->completing
+copmletion->completion
+copmletions->completions
 copmonent->component
 copmonents->components
 copmutations->computations
@@ -30068,6 +30086,8 @@ gnorung->ignoring
 gobal->global
 gobally->globally
 gocde->gcode
+godd->good, god,
+godds->goods, gods,
 godess->goddess
 godesses->goddesses
 Godounov->Godunov
@@ -30176,7 +30196,7 @@ granuality->granularity
 granualtiry->granularity
 granularty->granularity
 granulatiry->granularity
-grap->grep, grape,
+grap->grep, grape, graph, grasp,
 grapgic->graphic
 grapgical->graphical
 grapgics->graphics
@@ -37314,6 +37334,12 @@ manifiesting->manifesting
 manifiesto->manifesto
 manifiestos->manifestos
 manifiests->manifests
+manigest->manifest
+manigested->manifested
+manigesting->manifesting
+manigesto->manifesto
+manigestos->manifestos
+manigests->manifests
 manipluate->manipulate
 manipluated->manipulated
 manipulater->manipulator, manipulated, manipulates, manipulate,
@@ -52568,6 +52594,7 @@ scripst->scripts
 scripte->script, scripted,
 scriptin->scripting, script in,
 scriptiong->scripting
+scriptng->scripting
 scriptype->scripttype
 scrit->script, scrip,
 scritp->script
@@ -54408,6 +54435,10 @@ siplifies->simplifies
 siplify->simplify
 siplifying->simplifying
 siply->simply
+sipport->support
+sipported->supported
+sipporting->supporting
+sipports->supports
 sircle->circle
 sircles->circles
 sircular->circular
@@ -63514,9 +63545,11 @@ vulnerabililty->vulnerability
 vulnerabilites->vulnerabilities
 vulnerabiliti->vulnerability
 vulnerabilitie->vulnerability
+vulnerabilitiesy->vulnerability, vulnerabilities,
 vulnerabilitis->vulnerabilities
 vulnerabilitiy->vulnerability
 vulnerabilitu->vulnerability
+vulnerabilityies->vulnerability, vulnerabilities,
 vulnerabilitys->vulnerability, vulnerabilities,
 vulnerabiliy->vulnerability
 vulnerabillities->vulnerabilities
