@@ -82,6 +82,8 @@ degrate->degrade
 degrates->degrades
 dependant->dependent
 derails->details
+dervice->device, service,
+dervices->devices, services,
 descried->described
 descries->describes
 dirivative->derivative
@@ -178,6 +180,7 @@ mistakingly->mistakenly
 moil->soil, mohel,
 mot->not
 moue->mouse
+mouting->moulting, mounting, mouthing, muting, pouting,
 multistory->multistorey, multi-storey,
 nickle->nickel
 noes->nose, knows, nodes, does,
