@@ -8552,6 +8552,7 @@ auto-detetion->auto-detection, auto-deletion,
 auto-detets->auto-detects, auto-deletes,
 auto-ganerated->auto-generated
 auto-generaged->auto-generated
+auto-genertaed->auto-generated
 auto-genrated->auto-generated
 auto-genratet->auto-generated
 auto-genration->auto-generation
@@ -14370,6 +14371,12 @@ commputed->computed
 commputer->computer
 commputes->computes
 commputing->computing
+commssion->commission
+commssioned->commissioned
+commssioner->commissioner
+commssioners->commissioners
+commssioning->commissioning
+commssions->commissions
 commti->commit
 commtis->commits
 commtited->committed
@@ -19348,6 +19355,12 @@ decommissionin->decommissioning, decommission in,
 decommissionn->decommission
 decommissionned->decommissioned
 decommpress->decompress
+decommssion->decommission
+decommssioned->decommissioned
+decommssioner->decommissioner
+decommssioners->decommissioners
+decommssioning->decommissioning
+decommssions->decommissions
 decomoposition->decomposition
 decomposin->decomposing
 decomposion->decomposition
@@ -37437,6 +37450,8 @@ mangement->management
 mangementt->management
 manges->manages
 manging->managing
+mangitude->magnitude
+mangitudes->magnitudes
 manifacture->manufacture
 manifactured->manufactured
 manifacturer->manufacturer
