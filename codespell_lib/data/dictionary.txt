@@ -31382,6 +31382,12 @@ hyperboly->hyperbole
 Hyperldger->Hyperledger
 hypervior->hypervisor
 hyphenatin->hyphenating, hyphenation,
+hypocencter->hypocenter
+hypocenctre->hypocentre
+hypocengter->hypocenter
+hypocengtre->hypocentre
+hypocnter->hypocenter
+hypocntre->hypocentre
 hypocracy->hypocrisy
 hypocrasy->hypocrisy
 hypocricy->hypocrisy
@@ -34449,6 +34455,9 @@ insuffciently->insufficiently
 insufficency->insufficiency
 insufficent->insufficient
 insufficently->insufficiently
+insuffieciency->insufficiency
+insuffiecient->insufficient
+insuffieciently->insufficiently
 insuffiency->insufficiency
 insuffient->insufficient
 insuffiently->insufficiently
@@ -47679,7 +47688,6 @@ quartenion->quaternion
 quartenions->quaternions
 quartically->quadratically
 quatation->quotation
-quater->quarter
 quating->quoting, squatting, equating,
 quation->equation
 quations->equations
@@ -49867,6 +49875,8 @@ relfects->reflects
 reliabe->reliable
 reliabily->reliably, reliability,
 reliablity->reliability
+relibility->reliability
+relible->reliable
 relie->rely, relies, really, relief,
 reliefed->relieved
 reliefes->relieves
@@ -61967,6 +61977,11 @@ unreigstering->unregistering
 unreigsters->unregisters
 unrelatd->unrelated
 unreleated->unrelated
+unreliabe->unreliable
+unreliabily->unreliably, unreliability,
+unreliablity->unreliability
+unrelibility->unreliability
+unrelible->unreliable
 unrelted->unrelated
 unrelyable->unreliable
 unrelying->underlying
