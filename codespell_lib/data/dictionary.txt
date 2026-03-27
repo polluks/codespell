@@ -8216,6 +8216,7 @@ auhtorized->authorized
 auhtorizes->authorizes
 auhtorizing->authorizing
 auhtors->authors
+auido->audio
 aulty->aunty, faulty,
 aumatically->automatically, traumatically,
 aunthenticate->authenticate
@@ -8917,6 +8918,12 @@ avod->avoid
 avoded->avoided
 avoding->avoiding
 avods->avoids
+avoic->avoid
+avoicance->avoidance
+avoiced->avoided
+avoicing->avoiding
+avoics->avoids
+avoide->avoid, avoided, avoids,
 avoidence->avoidance
 avoidin->avoiding, avoid in, a void in,
 avoind->avoid
@@ -14855,6 +14862,8 @@ complitely->completely
 complites->completes, compiles,
 complition->completion, compilation,
 complmenet->complement
+complox->complex
+comploxity->complexity
 complte->complete
 complted->completed
 compltely->completely
@@ -18222,6 +18231,8 @@ creats->creates
 credate->created
 credentail->credential
 credentails->credentials
+credentila->credential
+credentilas->credentials
 credetial->credential
 credetials->credentials
 credidential->credential
@@ -18457,6 +18468,7 @@ cuases->causes
 cuasing->causing
 cubburd->cupboard
 cubburds->cupboards
+cubid->cubic, cuboid,
 cuestion->question
 cuestioned->questioned
 cuestions->questions
@@ -28853,6 +28865,9 @@ fomrats->formats
 fomratted->formatted
 fomratter->formatter
 fomratting->formatting
+fomrula->formula
+fomrulae->formulae
+fomrulas->formulas
 fomula->formula
 fomulae->formulae
 fomulaic->formulaic
@@ -29124,6 +29139,8 @@ fotografy->photography
 fotograph->photograph
 fotography->photography
 foucs->focus
+foudation->foundation
+foudations->foundations
 foudn->found
 foudning->founding
 fougth->fought
@@ -29731,6 +29748,10 @@ gatable->gateable
 gateing->gating
 gatherig->gathering
 gatherin->gathering, gather in,
+gathter->gather
+gathtered->gathered
+gathtering->gathering
+gathters->gathers
 gatin->gating, latin, satin, gain, gratin,
 gatway->gateway
 gauage->gauge
@@ -35845,6 +35866,12 @@ iverse->diverse, inverse,
 iversed->inverse, inversed,
 ivocation->invocation
 ivocations->invocations
+ivoice->invoice
+ivoiced->invoiced
+ivoicer->invoicer
+ivoicers->invoicers
+ivoices->invoices
+ivoicing->invoicing
 ivoke->invoke
 ivoked->invoked
 ivoker->invoker
@@ -38990,6 +39017,8 @@ modul->module
 modules's->modules'
 moduless->modules
 modulie->module
+modulle->module
+modulles->modules
 moduls->modules
 modulu->modulo
 modulues->modules
@@ -43525,6 +43554,8 @@ paretheses->parentheses
 parethesis->parenthesis
 parfay->parfait
 parge->large
+parger->larger, pager, parker, parser,
+pargers->pagers, parkers, parsers,
 paria->pariah, parka,
 parial->partial
 parially->partially
@@ -47886,6 +47917,7 @@ racoon->raccoon
 racoons->raccoons
 ractise->practise
 radation->radiation
+radback->read back, readback, red-back, hardback,
 rade->read, raid,
 rademption->redemption
 rademptions->redemptions
@@ -48992,6 +49024,12 @@ recordin->recording, record in,
 recordproducer->record producer
 recordss->records
 recored->recorded
+recorev->recover
+recoreved->recovered
+recorevies->recoveries
+recoreving->recovering
+recorevs->recovers
+recorevy->recovery
 recoriding->recording
 recource->resource, recourse,
 recourced->resourced
@@ -49741,10 +49779,13 @@ reinstaled->reinstalled
 reinstaling->reinstalling
 reinstallin->reinstalling, reinstall in,
 reinstals->reinstalls
+reinstat->reinstate
+reinstatd->reinstate, reinstated,
 reinstatiate->reinstantiate
 reinstatiated->reinstantiated
 reinstatiates->reinstantiates
 reinstatiation->reinstantiation
+reinstats->reinstate, reinstates,
 reintantiate->reinstantiate
 reintantiating->reinstantiating
 reintepret->reinterpret
@@ -50551,6 +50592,7 @@ repetetively->repetitively
 repeting->repeating, reputing, repenting,
 repetion->repetition
 repetions->repetitions
+repetirion->repetition, prepetition,
 repetive->repetitive, receptive,
 repetively->repetitively, receptively,
 repetoire->repertoire
@@ -51311,6 +51353,8 @@ responcibility->responsibility
 responcible->responsible
 responcive->responsive
 responciveness->responsiveness
+respondant->respondent
+respondants->respondents
 responde->respond, response, responds, responded, responder,
 respondin->responding, respond in,
 respone->response, respond,
@@ -61168,6 +61212,8 @@ unambigiously->unambiguously
 unambigous->unambiguous
 unambigously->unambiguously
 unamed->unnamed
+unamiguous->unambiguous
+unamiguously->unambiguously
 unanimuous->unanimous
 unanimuously->unanimously
 unannimous->unanimous
@@ -63392,6 +63438,8 @@ victimizin->victimizing
 victum->victim
 victums->victims
 videostreamming->videostreaming
+vidget->widget
+vidgets->widgets
 viee->view
 viees->views
 vieport->viewport
