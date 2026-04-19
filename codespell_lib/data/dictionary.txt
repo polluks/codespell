@@ -1011,6 +1011,8 @@ accoridngly->accordingly
 accoring->according, occurring,
 accoringly->accordingly
 accorndingly->accordingly
+accors->accord, across,
+accorss->accords, across,
 accort->accord
 accortance->accordance
 accorted->accorded
@@ -29684,6 +29686,8 @@ galllery->gallery
 galllerys->galleries
 galvinized->galvanized
 Gameboy->Game Boy
+gampad->gamepad
+gampads->gamepads
 ganbia->gambia
 ganeral->general
 ganerally->generally
@@ -34276,6 +34280,7 @@ installtion->installation
 installtions->installations
 instals->installs
 instanbul->Istanbul
+instanc->instance
 instancd->instance
 instanciate->instantiate
 instanciated->instantiated
@@ -37284,6 +37289,7 @@ magizine->magazine
 magnatiude->magnitude
 magnatude->magnitude
 magnificient->magnificent
+magntiude->magnitude
 magolia->magnolia
 mahcine->machine
 mahcines->machines
@@ -39108,12 +39114,15 @@ monochromo->monochrome
 monoclinc->monoclinic
 monocrome->monochrome
 monolite->monolithic
+monontonic->monotonic
 monontonicity->monotonicity
 monopace->monospace
 monotir->monitor
 monotired->monitored
 monotiring->monitoring
 monotirs->monitors
+monotonc->monotonic
+monotoncity->monotonicity
 monsday->Monday
 Monserrat->Montserrat
 monstrum->monster
@@ -39134,6 +39143,7 @@ montiors->monitors
 montly->monthly
 Montnana->Montana
 montonic->monotonic
+montonicity->monotonicity
 montor->monitor, motor, mentor,
 montored->monitored, mentored,
 montoring->monitoring, mentoring,
@@ -39198,6 +39208,7 @@ motivaiton->motivation
 motiviated->motivated
 motiviation->motivation
 motononic->monotonic
+motononicity->monotonicity
 motorin->motoring, motor in,
 motoroloa->motorola
 moudle->module
@@ -39400,8 +39411,10 @@ multipied->multiplied
 multipier->multiplier
 multipiers->multipliers
 multipies->multiplies
+multipile->multiple
 multipiler->multiplier
 multipilers->multipliers
+multipiles->multiples, multiplies,
 multipl->multiple, multiply,
 multiplcation->multiplication
 multipled->multiplied
@@ -54494,6 +54507,10 @@ simpifiers->simplifiers
 simpifies->simplifies
 simpify->simplify
 simpifying->simplifying
+simpilfied->simplified
+simpilfies->simplifies
+simpilfy->simplify
+simpilfying->simplifying
 simplcity->simplicity
 simplei->simply
 simpley->simply
@@ -54835,6 +54852,7 @@ sizos->sizes
 sizre->size
 Skagerak->Skagerrak
 skalar->scalar
+skarhoj->SKAARHOJ
 skateing->skating
 skatin->skating, statin,
 skecth->sketch
@@ -62089,8 +62107,8 @@ unsaging->unstaging
 unsanfe->unsafe
 unsatifactory->unsatisfactory
 unsccessful->unsuccessful
-unscubscribe->subscribe
-unscubscribed->subscribed
+unscubscribe->unsubscribe
+unscubscribed->unsubscribed
 unsearcahble->unsearchable
 unsed->unused, unset, used,
 unseful->useless, useful,
@@ -63864,6 +63882,7 @@ vulnerabillity->vulnerability
 vulnerabilties->vulnerabilities
 vulnerabilty->vulnerability
 vulnerabily->vulnerably, vulnerability,
+vulnerabities->vulnerabilities
 vulnerablilities->vulnerabilities
 vulnerablility->vulnerability
 vulnerablities->vulnerabilities
