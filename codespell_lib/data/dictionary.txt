@@ -25799,6 +25799,12 @@ everage->average
 everaged->averaged
 everbody->everybody
 everithing->everything
+evernt->event
+everntful->eventful
+evernts->events
+everntual->eventual
+everntuality->eventuality
+everntually->eventually
 everone->everyone
 everthing->everything
 evertyhign->everything
@@ -31416,6 +31422,8 @@ hybirds->hybrids
 hydogen->hydrogen
 hydrolic->hydraulic
 hydrolics->hydraulics
+hydrometerological->hydrometeorological
+hydrometerology->hydrometeorology
 hydropile->hydrophile
 hydropilic->hydrophilic
 hydropobe->hydrophobe
@@ -38323,6 +38331,7 @@ metatdata->metadata
 metdata->metadata
 meterial->material
 meterials->materials
+meterological->meteorological
 meterologist->meteorologist
 meterology->meteorology
 methaphor->metaphor
@@ -49089,7 +49098,9 @@ recontructs->reconstructs
 recordin->recording, record in,
 recordproducer->record producer
 recordss->records
-recored->recorded
+recored->record, recorded,
+recoreded->recorded
+recoreds->records
 recorev->recover
 recoreved->recovered
 recorevies->recoveries
@@ -51181,6 +51192,9 @@ researve->reserve
 researved->reserved
 researves->reserves
 researving->reserving
+reseeve->reserve
+reseeved->reserved
+reseeves->reserves
 reselction->reselection
 resembelance->resemblance
 resembes->resembles
@@ -54560,6 +54574,8 @@ simmetry->symmetry
 simmilar->similar
 simmilarity->similarity
 simmilarly->similarly
+simpe->simple, simper,
+simpest->simplest
 simpicity->simplicity
 simpification->simplification
 simpifications->simplifications
@@ -61657,6 +61673,7 @@ unessecarrily->unnecessarily
 unessecarry->unnecessary
 unessecary->unnecessary
 unevaluted->unevaluated
+uneverntful->uneventful
 unexcected->unexpected
 unexcectedly->unexpectedly
 unexceptionnal->unexceptional
